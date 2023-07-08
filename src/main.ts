@@ -1,12 +1,17 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
+import { auth } from '@test-workspace/auth';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
+app.get('/', (req: Request, res: Response) => {
+  res.send({ message: 'Testing nx Node.js standalone project' });
+});
+
+app.get('/auth', (req: Request, res: Response) => {
+  res.send(auth());
 });
 
 app.listen(port, host, () => {

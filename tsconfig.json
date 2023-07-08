@@ -13,7 +13,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@test-workspace/auth": ["auth/src/index.ts"]
+    },
     "esModuleInterop": true
   },
   "files": [],
